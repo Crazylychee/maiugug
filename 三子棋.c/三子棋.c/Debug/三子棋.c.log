@@ -1,0 +1,21 @@
+﻿生成启动时间为 2022/12/20 15:25:16。
+     1>项目“D:\cpp,project\三子棋.c\三子棋.c\三子棋.c.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         A:\yc\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt game.c text.c
+         text.c
+     1>d:\cpp,project\三子棋.c\三子棋.c\text.c(13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 a:\yc\vc\include\stdio.h(283) : 参见“scanf”的声明
+         game.c
+     1>d:\cpp,project\三子棋.c\三子棋.c\game.c(97): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 a:\yc\vc\include\stdio.h(283) : 参见“scanf”的声明
+     1>d:\cpp,project\三子棋.c\三子棋.c\game.c(125): warning C4013: “rand”未定义；假设外部返回 int
+         正在生成代码...
+       Link:
+         A:\yc\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\cpp,project\三子棋.c\Debug\三子棋.c.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\cpp,project\三子棋.c\Debug\三子棋.c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\cpp,project\三子棋.c\Debug\三子棋.c.lib" /MACHINE:X86 Debug\game.obj
+         Debug\text.obj
+         三子棋.c.vcxproj -> D:\cpp,project\三子棋.c\Debug\三子棋.c.exe
+     1>已完成生成项目“D:\cpp,project\三子棋.c\三子棋.c\三子棋.c.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.20

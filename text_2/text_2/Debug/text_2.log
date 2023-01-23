@@ -1,0 +1,10 @@
+﻿生成启动时间为 2022/9/2 8:09:02。
+     1>项目“D:\cpp,project\text_2\text_2\text_2.vcxproj”在节点 2 上(Build 个目标)。
+     1>Lib:
+         A:\yc\VC\bin\Lib.exe /OUT:"D:\cpp,project\text_2\Debug\text_2.lib" /NOLOGO Debug\Add.obj
+         text_2.vcxproj -> D:\cpp,project\text_2\Debug\text_2.lib
+     1>已完成生成项目“D:\cpp,project\text_2\text_2\text_2.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.22
