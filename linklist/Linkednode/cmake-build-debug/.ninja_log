@@ -1,14 +1,5 @@
 # ninja log v5
-3	122	7009208285892877	CMakeFiles/Linkednode.dir/main.c.obj	f922bdbe6effebb5
-118	350	7009211880731325	Linkednode.exe	fb0f8ce027f5ee2c
-1	185	7009212739798788	build.ninja	bd5c6f69d3b660fd
-3	117	7009211878449035	CMakeFiles/Linkednode.dir/test.c.obj	f89bb8ff1480b470
-3	116	7009213952256116	CMakeFiles/Linkednode.dir/main.c.obj	f922bdbe6effebb5
-117	322	7009213954267920	Linkednode.exe	fb0f8ce027f5ee2c
-3	120	7009214710481092	CMakeFiles/Linkednode.dir/main.c.obj	f922bdbe6effebb5
-121	359	7009214712839385	Linkednode.exe	fb0f8ce027f5ee2c
-3	106	7009215512238318	CMakeFiles/Linkednode.dir/main.c.obj	f922bdbe6effebb5
-108	305	7009215514182758	Linkednode.exe	fb0f8ce027f5ee2c
 4	222	7009219705015809	CMakeFiles/Linkednode.dir/main.c.obj	f922bdbe6effebb5
-10	226	7009219705049326	CMakeFiles/Linkednode.dir/test.c.obj	f89bb8ff1480b470
 226	595	7009219708724056	Linkednode.exe	fb0f8ce027f5ee2c
+1	185	7009487017939154	build.ninja	bd5c6f69d3b660fd
+10	226	7009219705049326	CMakeFiles/Linkednode.dir/test.c.obj	f89bb8ff1480b470

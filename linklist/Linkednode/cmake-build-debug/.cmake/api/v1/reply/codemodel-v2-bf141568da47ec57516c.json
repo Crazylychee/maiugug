@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/yc/CLionProjects/Linkednode/cmake-build-debug",
-		"source" : "C:/Users/yc/CLionProjects/Linkednode"
+		"build" : "C:/Users/yc/CLionProjects/qg/linklist/Linkednode/cmake-build-debug",
+		"source" : "C:/Users/yc/CLionProjects/qg/linklist/Linkednode"
 	},
 	"version" : 
 	{

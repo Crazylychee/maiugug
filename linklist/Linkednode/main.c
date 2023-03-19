@@ -1,39 +1,29 @@
 #include "linkedList.h"
-//ä¸»è¦å®ç°äº¤äº’ç•Œé¢,æš‚æ—¶ç”¨æ§åˆ¶å°æ–‡æœ¬åŒ–ç•Œé¢
+//Ö÷ÒªÊµÏÖ½»»¥½çÃæ,ÔİÊ±ÓÃ¿ØÖÆÌ¨ÎÄ±¾»¯½çÃæ
 int main() {
-    int a=0;LinkedList L;int b=0;
+    int a=0;LinkedList *L= malloc(LEN);int b=0;
     void (*e)(ElemType) = 0;
     LinkedList *q;
 
-   //é€‰æ‹©åŠŸèƒ½
+    //Ñ¡Ôñ¹¦ÄÜ
     do
     {
         menu();
-        //è¯¯è¾“å­—ç¬¦ä¸ä¼šä½¿ç¨‹åºå¥”æºƒ
+        //ÎóÊä×Ö·û²»»áÊ¹³ÌĞò±¼À£
         scanf("%d", &a);
-        system("cls");
-        while (a>10 || a < 0)
-        {
-            menu();
-            printf("error! please input the number again!\n\n");
-            getchar();
-            scanf("%d", &a);
-            system("cls");
-        }//Gives the code the ability to check for errors
         switch ((int)a) {
             case InitList1:
-                if (!InitList(L))printf("å†…å­˜ä¸è¶³,æ— æ³•åˆ†é…ç©ºé—´");
-                menu();
+                InitList(L);
+                printf("%d\n",(*L)->data);
                 break;
             case DestroyList1:
                 DestroyList(L);
 //                menu();
                 break;
             case InsertList1:
-
                 q = (LNode *) malloc(LEN);
                 if (L == NULL) {
-                    printf("å†…å­˜ä¸è¶³,è¯·ç¨åå†è¯•!!");
+                    printf("error");
                     return OVERFLOW;
                 }
                     InsertList(L, q);
@@ -51,9 +41,9 @@ int main() {
                     break;
                     case ReverseList1:
                         if (ReverseList(L)) {
-                            printf("åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹æ— éœ€åè½¬");
+                            printf("reverse successfully");
                         } else {
-                            printf("åè½¬æˆåŠŸ!!");
+                            printf("fail to reverse ");
                         };
                     break;
                     case IsLoopList1:
@@ -65,7 +55,7 @@ int main() {
                     case FindMidNode1:
                         FindMidNode(L);
                     break;
-                    //æœ‰é€€å‡ºåŠŸèƒ½
+                    //?????????
                     case return1:
                         a = 0;
                         break;

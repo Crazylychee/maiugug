@@ -13,32 +13,34 @@ void menu()
     printf("****** 4.TraverseList          ******\n");//
     printf("****** 5.SearchList            ******\n");//
     printf("****** 6.ReverseList           ******\n");//
-    printf("****** 7.IsLoopList            ******\n");//
+    printf("****** 7.IsLoopList            ******\n");//判断时候
     printf("****** 8.ReverseEvenList       ******\n");//
     printf("****** 9.FindMidNode          ******\n");
     printf("****** 10.Exit                ******\n");
     printf("*************************************\n");
 }
-Status InitList(LinkedList L)
+Status InitList(LinkedList *L)
 {
-    L= (LinkedList)malloc(LEN);
+    *L= (LinkedList)malloc(NEN);
     if(L==NULL){
-        printf("内存不足,请稍后再试!!");
+        printf("error!!\n");
         return OVERFLOW;
     }
-    L->data = 0;L->next=NULL;
+    (*L)->next=NULL;(*L)->data = 0;
+    printf("make successfully\n");
     return SUCCESS;
 }
 
 void DestroyList(LinkedList *L)
 {
-    LinkedList p = L;
+    LinkedList p = *L;
     while(p)
     {
         p = p->next;
-        free(L);
-        L = p;
+        free(*L);
+        *L = p;
     }
+    printf("destroy successfully!!");
 }
 
 Status InsertList(LNode *p, LNode *q)
@@ -52,15 +54,15 @@ Status InsertList(LNode *p, LNode *q)
     return SUCCESS;
 }
 
-Status DeleteList(LNode *p, ElemType e)
+Status DeleteList(LNode *p, ElemType *e)
 {
     //排除不可取的情况,链表为空,
     if(p ==NULL||p->next == NULL)return ERROR;
     LinkedList q= p->next;
-    e = q->data;
+    *e = q->data;
     p->next = q->next;
     free(q);
-    return e;
+    return *e;
 }
 void TraverseList(LinkedList L, void (*visit)(ElemType e))
 {
@@ -79,14 +81,14 @@ Status SearchList(LinkedList L, ElemType e)
     }
     return SUCCESS;
 }
-Status ReverseList(LinkedList L){
+Status ReverseList(LinkedList *L){
     //边界条件:如果是只有一个节点,或是空链表就不用操作
-    if(!L || L->next) {
+    if(!(*L) || (*L)->next) {
         return ERROR;
     }
     //step1: 先把后面的反了,递归实现
-    L->next->next = L;
-    L->next = NULL;
+    (*L)->next->next = (*L);
+    (*L)->next = NULL;
     return SUCCESS;
 }
 Status IsLoopList(LinkedList L)
@@ -108,12 +110,12 @@ Status IsLoopList(LinkedList L)
         }
     }
 }
-LNode* ReverseEvenList(LinkedList L)
+LNode* ReverseEvenList(LinkedList *L)
 {
-    if(L == NULL||L->next==NULL)
-        return L;
+    if((*L) == NULL||(*L)->next==NULL)
+        return (*L);
     LinkedList q,p,o;
-    p=L->next;L->next =NULL;
+    p=(*L)->next;(*L)->next =NULL;
     q = o =NULL;
     while(p){
         q=p->next;
@@ -121,12 +123,12 @@ LNode* ReverseEvenList(LinkedList L)
         o=p;
         p=q;
     }
-    L->next = o;
+    (*L)->next = o;
     return L;
 }
-LNode* FindMidNode(LinkedList L)
+LNode* FindMidNode(LinkedList *L)
 {
-    if(L==NULL||L->next==NULL)
+    if((*L)==NULL||(*L)->next==NULL)
         return L;
     LinkedList mid,fast;
     mid = fast = L;

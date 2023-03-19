@@ -28,7 +28,8 @@
 **************************************************************/
 #include "stdlib.h"
 #include "stdio.h"
-#define LEN sizeof(LNode)
+#define LEN sizeof(LinkedList)
+#define NEN sizeof (LNode)
 // define element type
 typedef int ElemType;
 
@@ -75,7 +76,7 @@ void menu();
  *	@return		 : Status
  *  @notice      : None
  */
-Status InitList(LinkedList L);
+Status InitList(LinkedList *L);
 
 /**
  *  @name        : void DestroyList(LinkedList *L)
@@ -102,7 +103,7 @@ Status InsertList(LNode *p, LNode *q);
  *	@return		 : Status
  *  @notice      : None
  */
-Status DeleteList(LNode *p, ElemType e);
+Status DeleteList(LNode *p, ElemType *e);
 
 /**
  *  @name        : void TraverseList(LinkedList L, void (*visit)(ElemType e))
@@ -129,7 +130,7 @@ Status SearchList(LinkedList L, ElemType e);
  *	@return		 : Status
  *  @notice      : None
  */
-Status ReverseList(LinkedList L);
+Status ReverseList(LinkedList *L);
 
 /**
  *  @name        : Status IsLoopList(LinkedList L)
@@ -147,7 +148,7 @@ Status IsLoopList(LinkedList L);
  *	@return		 : LNode(the new head node)
  *  @notice      : choose to finish
  */
-LNode* ReverseEvenList(LinkedList L);
+LNode* ReverseEvenList(LinkedList *L);
 
 /**
  *  @name        : LNode* FindMidNode(LinkedList *L)
@@ -156,7 +157,7 @@ LNode* ReverseEvenList(LinkedList L);
  *	@return		 : LNode
  *  @notice      : choose to finish
  */
-LNode* FindMidNode(LinkedList L);
+LNode* FindMidNode(LinkedList *L);
 
  /**************************************************************
 *	End-Multi-Include-Prevent Section
