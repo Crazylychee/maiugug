@@ -5,6 +5,9 @@ int main() {
     void (*e)(ElemType) = 0;
     LinkedList *q;
 
+    InitList(*L);
+    *L = ListTailInsert(*L);
+//    *L = ListHeadInsert(*L);
     //选择功能
     do
     {
@@ -12,10 +15,6 @@ int main() {
         //误输字符不会使程序奔溃
         scanf("%d", &a);
         switch ((int)a) {
-            case InitList1:
-                InitList(L);
-                printf("%d\n",(*L)->data);
-                break;
             case DestroyList1:
                 DestroyList(L);
 //                menu();
@@ -30,7 +29,7 @@ int main() {
 //                menu();
                     break;
                     case DeleteList1:
-                        DeleteList(L, b);
+                        DeleteList(L, &b);
                     break;
                     case TraverseList1:
                         TraverseList(L, e);
@@ -55,9 +54,8 @@ int main() {
                     case FindMidNode1:
                         FindMidNode(L);
                     break;
-                    //?????????
                     case return1:
-                        a = 0;
+                        a = 10;
                         break;
                     default:
                         break;

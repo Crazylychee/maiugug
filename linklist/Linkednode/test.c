@@ -13,15 +13,62 @@ void menu()
     printf("****** 4.TraverseList          ******\n");//
     printf("****** 5.SearchList            ******\n");//
     printf("****** 6.ReverseList           ******\n");//
-    printf("****** 7.IsLoopList            ******\n");//åˆ¤æ–­æ—¶å€™
+    printf("****** 7.IsLoopList            ******\n");//ÅÐ¶ÏÊ±ºò
     printf("****** 8.ReverseEvenList       ******\n");//
     printf("****** 9.FindMidNode          ******\n");
     printf("****** 10.Exit                ******\n");
     printf("*************************************\n");
 }
+//Í·²å·¨½¨Á¢µ¥Á´±í:Ö»ÐèÁ½¸öÖ¸Õë
+LinkedList ListHeadInsert(LinkedList p){
+    LinkedList p1;
+    int input=0,cnt=0;
+    printf("(ÊäÈë999999½áÊø)ÇëÊäÈëÁ´±íÊý×Ö: \n");
+    scanf("%d",&input);
+    while(input!=999999){
+        p1 = (LinkedList) malloc(NEN);
+        //ÕâÀïÍ·²å·¨µÄ²½ÖèÏàµ±ÓÚÊÇ´ò¿ªÆ¿¸Ç·ÅË®,Ã¿´Î¶¼ÊÇ¶¯Í·½Úµã.
+        //µÚÒ»´Î¼ÓÈë°ÑNULLÒ²¿´×÷ÊÇÒ»¸ö½Úµã¾ÍºÃÀí½âÁË
+        //1.ÖÆ×÷Ìí¼Ó½Úµã(¼ÓÈëÁËÊý¾Ý)
+        p1->data = input;
+        //2.Á´½ÓÐÂ½Úµãµ½Í·½ÚµãÖ®ºó,²¢¼ÆÊýÆ÷¼ÓÒ»
+        p1->next = p->next;
+        cnt++;
+        //¶Ï¿ªÍ·½Úµã,²¢ÖØÐÂ°ÑÍ·½Úµã½Óµ½ÐÂ½ÚµãµÄÍ·Í·
+        p->next = p1;
+        //×îºóÔÙÌí¼ÓÏÂÒ»¸öÊý¾Ý
+        scanf("%d",&input);
+    }
+    p->data=cnt;
+    return p;
+}
+//Î²²å·¨½¨Á¢µ¥Á´±í:ÐèÒªÈý¸öÖ¸Õë
+LinkedList ListTailInsert(LinkedList p){
+    LinkedList p2;
+    LinkedList p1= p2 = p;
+    int input=0,cnt=0;
+    printf("(ÊäÈë999999½áÊø)ÇëÊäÈëÁ´±íÊý×Ö: \n");
+    scanf("%d",&input);
+    while(input!=999999){
+        p1 = (LinkedList) malloc(NEN);
+        //ÕâÀïÎ²²å·¨µÄ²½ÖèÏàµ±ÓÚÊÇ´ò¿ªÆ¿¸Ç·ÅË®,Ã¿´Î¶¼ÊÇ¶¯Í·½Úµã.
+        //µÚÒ»´Î¼ÓÈë°ÑNULLÒ²¿´×÷ÊÇÒ»¸ö½Úµã¾ÍºÃÀí½âÁË
+        //1.ÖÆ×÷Ìí¼Ó½Úµã(¼ÓÈëÁËÊý¾Ý)
+        p1->data = input;
+        //2.Á´½ÓÐÂ½Úµãµ½Í·½ÚµãÖ®ºó,²¢¼ÆÊýÆ÷¼Ó1
+        p2->next = p1;
+        cnt++;
+        p2=p1;//p2Ö¸ÏòÐÂµÄ±íÎ²½Úµã(ÓÀÔ¶±£³Öp2Ö¸Ïò×îºóÒ»¸ö½Úµã)
+        //×îºóÔÙÌí¼ÓÏÂÒ»¸öÊý¾Ý
+        scanf("%d",&input);
+    }
+    p2->next=NULL;
+    p->data=cnt;
+    return p;
+}
 Status InitList(LinkedList *L)
 {
-    *L= (LinkedList)malloc(NEN);
+    (*L)= (LinkedList)malloc(NEN);
     if(L==NULL){
         printf("error!!\n");
         return OVERFLOW;
@@ -45,7 +92,7 @@ void DestroyList(LinkedList *L)
 
 Status InsertList(LNode *p, LNode *q)
 {
-    //å°±æ˜¯å°†æ–°èŠ‚ç‚¹é“¾æŽ¥åˆ°pä¹‹åŽ
+    //¾ÍÊÇ½«ÐÂ½ÚµãÁ´½Óµ½pÖ®ºó
     if(p==NULL||q == NULL)
         return ERROR;
     q->next = p->next;
@@ -56,7 +103,7 @@ Status InsertList(LNode *p, LNode *q)
 
 Status DeleteList(LNode *p, ElemType *e)
 {
-    //æŽ’é™¤ä¸å¯å–çš„æƒ…å†µ,é“¾è¡¨ä¸ºç©º,
+    //ÅÅ³ý²»¿ÉÈ¡µÄÇé¿ö,Á´±íÎª¿Õ,
     if(p ==NULL||p->next == NULL)return ERROR;
     LinkedList q= p->next;
     *e = q->data;
@@ -82,11 +129,11 @@ Status SearchList(LinkedList L, ElemType e)
     return SUCCESS;
 }
 Status ReverseList(LinkedList *L){
-    //è¾¹ç•Œæ¡ä»¶:å¦‚æžœæ˜¯åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹,æˆ–æ˜¯ç©ºé“¾è¡¨å°±ä¸ç”¨æ“ä½œ
+    //±ß½çÌõ¼þ:Èç¹ûÊÇÖ»ÓÐÒ»¸ö½Úµã,»òÊÇ¿ÕÁ´±í¾Í²»ÓÃ²Ù×÷
     if(!(*L) || (*L)->next) {
         return ERROR;
     }
-    //step1: å…ˆæŠŠåŽé¢çš„åäº†,é€’å½’å®žçŽ°
+    //step1: ÏÈ°ÑºóÃæµÄ·´ÁË,µÝ¹éÊµÏÖ
     (*L)->next->next = (*L);
     (*L)->next = NULL;
     return SUCCESS;

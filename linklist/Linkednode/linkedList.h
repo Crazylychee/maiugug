@@ -67,6 +67,8 @@ enum choice2
  * 自定义函数
  *
  */
+LinkedList ListHeadInsert(LinkedList p);
+LinkedList ListTailInsert(LinkedList p);
 void menu();
 
 /**
