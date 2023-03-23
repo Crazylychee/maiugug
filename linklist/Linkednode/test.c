@@ -6,7 +6,7 @@ void menu()
 {
     printf("*************************************\n");
     printf("****** Please input the number ******\n");
-    printf("****** 0.InitList              ******\n");//
+    printf("****** 0.SListPrint            ******\n");//
     printf("****** 1.DestroyList           ******\n");//
     printf("****** 2.InsertList            ******\n");//
     printf("****** 3.DeleteList            ******\n");//
@@ -49,6 +49,7 @@ LinkedList ListTailInsert(LinkedList p){
     int input=0,cnt=0;
     printf("(输入999999结束)请输入链表数字: \n");
     scanf("%d",&input);
+
     while(input!=999999){
         p1 = (LinkedList) malloc(NEN);
         //这里尾插法的步骤相当于是打开瓶盖放水,每次都是动头节点.
@@ -74,7 +75,6 @@ Status InitList(LinkedList *L)
         return OVERFLOW;
     }
     (*L)->next=NULL;(*L)->data = 0;
-    printf("make successfully\n");
     return SUCCESS;
 }
 
@@ -87,7 +87,7 @@ void DestroyList(LinkedList *L)
         free(*L);
         *L = p;
     }
-    printf("destroy successfully!!");
+    printf("destroy successfully!!\n");
 }
 
 Status InsertList(LNode *p, LNode *q)
@@ -104,38 +104,49 @@ Status InsertList(LNode *p, LNode *q)
 Status DeleteList(LNode *p, ElemType *e)
 {
     //排除不可取的情况,链表为空,
-    if(p ==NULL||p->next == NULL)return ERROR;
-    LinkedList q= p->next;
-    *e = q->data;
-    p->next = q->next;
-    free(q);
-    return *e;
+    assert(p!=NULL);
+    //排除为最后一个数的情况
+    if(p->next==NULL)
+    {
+        *e=p->data;
+        p=NULL;
+    }
+    LinkedList cur;
+    cur = p->next;
+    *e=cur->data;
+    p->next=cur->next;
+    free(cur);
+    return SUCCESS;
 }
 void TraverseList(LinkedList L, void (*visit)(ElemType e))
 {
-    LinkedList p = L->next;
-    while(p){
-        visit(p->data);
-        p=p->next;
-    }
+    SListPrint(L);
 }
 Status SearchList(LinkedList L, ElemType e)
 {
+    LinkedList p;
     if(L->next == NULL) return ERROR;
-    LinkedList p = L->next;
-    while(p->data != e&&p != NULL){
-        p=p->next;
+    p = Findnode(L);
+    if(p==NULL){
+        printf("can not find the number!!\n");
+        return ERROR;
     }
     return SUCCESS;
 }
 Status ReverseList(LinkedList *L){
     //边界条件:如果是只有一个节点,或是空链表就不用操作
-    if(!(*L) || (*L)->next) {
-        return ERROR;
+    LinkedList cur = (*L);
+    LinkedList newhead = NULL;
+    while(cur){
+        LinkedList next = cur->next;
+        //头插法
+        cur->next = newhead;
+        newhead = cur;
+
+        //迭代往后走
+        cur =next;
     }
-    //step1: 先把后面的反了,递归实现
-    (*L)->next->next = (*L);
-    (*L)->next = NULL;
+    (*L)=newhead;
     return SUCCESS;
 }
 Status IsLoopList(LinkedList L)
@@ -175,15 +186,92 @@ LNode* ReverseEvenList(LinkedList *L)
 }
 LNode* FindMidNode(LinkedList *L)
 {
-    if((*L)==NULL||(*L)->next==NULL)
-        return L;
-    LinkedList mid,fast;
-    mid = fast = L;
-    while(fast!=NULL)
+    LinkedList slow,fast;
+    slow = fast= *L;
+    while(fast&&fast->next)
     {
-        if(fast->next==NULL)fast = fast ->next;
-        else fast = fast ->next->next;
-        mid = mid->next;
+        slow = slow->next;
+        fast = fast->next->next;
     }
-    return mid;
+    return slow;
+}
+
+void test(LinkedList *L){
+    LinkedList n1 = (LinkedList) malloc(NEN);
+    LinkedList n2 = (LinkedList) malloc(NEN);
+    LinkedList n3 = (LinkedList) malloc(NEN);
+    LinkedList n4 = (LinkedList) malloc(NEN);
+    LinkedList n5 = (LinkedList) malloc(NEN);
+    LinkedList n6 = (LinkedList) malloc(NEN);
+
+    n1->data = 3;
+    n2->data = 5;
+    n3->data = 2;
+    n4 ->data = 8;
+    n5->data = 6;
+    n6->data = 7;
+    n1->next=n2;
+    n2->next = n3;
+    n3->next = n4;
+    n4->next = n5;
+    n5->next = n6;
+    n6->next = NULL;
+
+    *L = n1;
+    return;
+}
+void SListPrint(LinkedList phead){
+    LinkedList cur = phead;
+    while(cur !=NULL){
+        printf("%d->",cur->data);
+        cur = cur->next;
+    }
+    printf("NULL\n");
+}
+
+LinkedList Findnode(const LinkedList L){
+    int input=0;
+    scanf("%d",&input);
+    LinkedList newnode;
+    newnode = L;
+    while(newnode->data!=input&&newnode->next!=NULL){
+        newnode = newnode->next;
+    }
+    if(newnode->data==input)
+    return newnode;
+    else return NULL;
+}
+LinkedList InitList_1(int n)
+{
+    LinkedList  L= (LinkedList)malloc(NEN);
+    if(L==NULL){
+        printf("error!!\n");
+        exit(1);
+    }
+    L->next=NULL;L->data = n;
+    return  L;
+}
+void test_1(LinkedList *L){
+    LinkedList n1 = (LinkedList) malloc(NEN);
+    LinkedList n2 = (LinkedList) malloc(NEN);
+    LinkedList n3 = (LinkedList) malloc(NEN);
+    LinkedList n4 = (LinkedList) malloc(NEN);
+    LinkedList n5 = (LinkedList) malloc(NEN);
+    LinkedList n6 = (LinkedList) malloc(NEN);
+
+    n1->data = 3;
+    n2->data = 5;
+    n3->data = 2;
+    n4 ->data = 8;
+    n5->data = 6;
+    n6->data = 7;
+    n1->next=n2;
+    n2->next = n3;
+    n3->next = n4;
+    n4->next = n5;
+    n5->next = n6;
+    n6->next = n1;
+
+    *L = n1;
+    return;
 }

@@ -28,6 +28,7 @@
 **************************************************************/
 #include "stdlib.h"
 #include "stdio.h"
+#include "assert.h"
 #define LEN sizeof(LinkedList)
 #define NEN sizeof (LNode)
 // define element type
@@ -46,7 +47,7 @@ typedef enum Status {
 } Status;
 enum choice2
 {
-    InitList1,
+    SListPrint1,
     DestroyList1,
     InsertList1,
     DeleteList1,
@@ -67,10 +68,14 @@ enum choice2
  * 自定义函数
  *
  */
+void test(LinkedList *L);
 LinkedList ListHeadInsert(LinkedList p);
 LinkedList ListTailInsert(LinkedList p);
 void menu();
-
+void SListPrint(LinkedList phead);
+LinkedList InitList_1(int n);
+LinkedList Findnode(const LinkedList L);
+void test_1(LinkedList *L);
 /**
  *  @name        : Status InitList(LinkList *L);
  *	@description : initialize an empty linked list with only the head node without value
