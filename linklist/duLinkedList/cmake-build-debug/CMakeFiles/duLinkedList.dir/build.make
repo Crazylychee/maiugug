@@ -52,10 +52,10 @@ RM = "D:\yc\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\yc\CLionProjects\duLinkedList
+CMAKE_SOURCE_DIR = C:\Users\yc\CLionProjects\qg\linklist\duLinkedList
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/duLinkedList.dir/depend.make
@@ -69,32 +69,32 @@ include CMakeFiles/duLinkedList.dir/progress.make
 include CMakeFiles/duLinkedList.dir/flags.make
 
 CMakeFiles/duLinkedList.dir/main.c.obj: CMakeFiles/duLinkedList.dir/flags.make
-CMakeFiles/duLinkedList.dir/main.c.obj: C:/Users/yc/CLionProjects/duLinkedList/main.c
+CMakeFiles/duLinkedList.dir/main.c.obj: C:/Users/yc/CLionProjects/qg/linklist/duLinkedList/main.c
 CMakeFiles/duLinkedList.dir/main.c.obj: CMakeFiles/duLinkedList.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/duLinkedList.dir/main.c.obj"
-	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/duLinkedList.dir/main.c.obj -MF CMakeFiles\duLinkedList.dir\main.c.obj.d -o CMakeFiles\duLinkedList.dir\main.c.obj -c C:\Users\yc\CLionProjects\duLinkedList\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/duLinkedList.dir/main.c.obj"
+	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/duLinkedList.dir/main.c.obj -MF CMakeFiles\duLinkedList.dir\main.c.obj.d -o CMakeFiles\duLinkedList.dir\main.c.obj -c C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\main.c
 
 CMakeFiles/duLinkedList.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/duLinkedList.dir/main.c.i"
-	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yc\CLionProjects\duLinkedList\main.c > CMakeFiles\duLinkedList.dir\main.c.i
+	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\main.c > CMakeFiles\duLinkedList.dir\main.c.i
 
 CMakeFiles/duLinkedList.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/duLinkedList.dir/main.c.s"
-	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yc\CLionProjects\duLinkedList\main.c -o CMakeFiles\duLinkedList.dir\main.c.s
+	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\main.c -o CMakeFiles\duLinkedList.dir\main.c.s
 
 CMakeFiles/duLinkedList.dir/test.c.obj: CMakeFiles/duLinkedList.dir/flags.make
-CMakeFiles/duLinkedList.dir/test.c.obj: C:/Users/yc/CLionProjects/duLinkedList/test.c
+CMakeFiles/duLinkedList.dir/test.c.obj: C:/Users/yc/CLionProjects/qg/linklist/duLinkedList/test.c
 CMakeFiles/duLinkedList.dir/test.c.obj: CMakeFiles/duLinkedList.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/duLinkedList.dir/test.c.obj"
-	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/duLinkedList.dir/test.c.obj -MF CMakeFiles\duLinkedList.dir\test.c.obj.d -o CMakeFiles\duLinkedList.dir\test.c.obj -c C:\Users\yc\CLionProjects\duLinkedList\test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/duLinkedList.dir/test.c.obj"
+	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/duLinkedList.dir/test.c.obj -MF CMakeFiles\duLinkedList.dir\test.c.obj.d -o CMakeFiles\duLinkedList.dir\test.c.obj -c C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\test.c
 
 CMakeFiles/duLinkedList.dir/test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/duLinkedList.dir/test.c.i"
-	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yc\CLionProjects\duLinkedList\test.c > CMakeFiles\duLinkedList.dir\test.c.i
+	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\test.c > CMakeFiles\duLinkedList.dir\test.c.i
 
 CMakeFiles/duLinkedList.dir/test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/duLinkedList.dir/test.c.s"
-	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yc\CLionProjects\duLinkedList\test.c -o CMakeFiles\duLinkedList.dir\test.c.s
+	D:\yc\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\test.c -o CMakeFiles\duLinkedList.dir\test.c.s
 
 # Object files for target duLinkedList
 duLinkedList_OBJECTS = \
@@ -110,7 +110,7 @@ duLinkedList.exe: CMakeFiles/duLinkedList.dir/build.make
 duLinkedList.exe: CMakeFiles/duLinkedList.dir/linklibs.rsp
 duLinkedList.exe: CMakeFiles/duLinkedList.dir/objects1.rsp
 duLinkedList.exe: CMakeFiles/duLinkedList.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable duLinkedList.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable duLinkedList.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\duLinkedList.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -122,6 +122,6 @@ CMakeFiles/duLinkedList.dir/clean:
 .PHONY : CMakeFiles/duLinkedList.dir/clean
 
 CMakeFiles/duLinkedList.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\yc\CLionProjects\duLinkedList C:\Users\yc\CLionProjects\duLinkedList C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug C:\Users\yc\CLionProjects\duLinkedList\cmake-build-debug\CMakeFiles\duLinkedList.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\yc\CLionProjects\qg\linklist\duLinkedList C:\Users\yc\CLionProjects\qg\linklist\duLinkedList C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\cmake-build-debug\CMakeFiles\duLinkedList.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/duLinkedList.dir/depend
 

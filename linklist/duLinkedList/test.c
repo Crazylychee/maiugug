@@ -12,66 +12,33 @@ void menu()
     printf("****** 4.InsertAfterList_DuL   ******\n");//
     printf("****** 5.DeleteList_DuL        ******\n");//
     printf("****** 6.TraverseList_DuL      ******\n");//
+    printf("****** 7.create a test list    ******\n");//创建一个测试用链表
     printf("*************************************\n");//
 
 }
-Status InitList_DuL(DuLinkedList L){
-    L = (DuLinkedList)malloc(sizeof(DuLNode));
-    if(!L)
+Status InitList_DuL(DuLinkedList *L){
+    DuLNode *phead=(DuLNode*) malloc(DEN);
+    if(!phead)
     {
         return OVERFLOW;
     }
-    L->prior = L->next = NULL;
+    phead ->next = phead;
+    phead->prior = phead;
+    *L=phead;
     printf("Successfully initialize a DuLinkedList!\n");
     return SUCCESS;
 }
 void DestroyList_DuL(DuLinkedList *L){
-    DuLinkedList p;
-    p = L;
-    while(p)
-    {
-        p = p->next;
-        free(L);
-        L = p;
+    while(*L!=NULL){
+        *L=(*L)->next;
     }
 }
 
 Status InsertBeforeList_DuL(DuLNode *p, DuLNode *q)
 {
-    DuLinkedList pnext = p;
-    int i = 1;
-    int n;
-
-    while((i<n) && (pnext != NULL))
-    {
-        i++;
-        pnext = pnext->next;
-
-    }
-    if(pnext == NULL)
-    {
-        return ERROR;
-    }
-    else
-    {
-        q = (DuLinkedList)malloc(sizeof(DuLNode));
-        printf("Please input the data of the inserted node:");
-        scanf("%d", &q->data);
-
-        q->next = pnext->next;
-        if(n = 0)
-        {
-            pnext->next = q;
-            q->next = NULL;
-        }
-        else
-        {
-            pnext->next = q;
-            pnext->next->prior = q;
-            q->prior = pnext;
-        }
-    }
-    return SUCCESS;
+    int x=0;
+    x=q->data;
+    ListInsert(p,x);
 }
 
 Status InsertAfterList_DuL(DuLNode *p, DuLNode *q){
@@ -92,10 +59,6 @@ Status InsertAfterList_DuL(DuLNode *p, DuLNode *q){
     }
     else
     {
-        q = (DuLinkedList)malloc(sizeof(DuLNode));
-        printf("Please input the data of the inserted node:");
-        scanf("%d", &q->data);
-
         q->next = pnext->next;
         if(n = 0)
         {
@@ -113,30 +76,95 @@ Status InsertAfterList_DuL(DuLNode *p, DuLNode *q){
 
 }
 
-Status DeleteList_DuL(DuLNode *L, ElemType *e){
-    if(L == NULL || L->next == NULL)
-    {
-        return ERROR;
-    }
-    DuLinkedList q, pre;
-    q = L->next;
-    while(q->data != e)
-    {
-        pre = q;
-        q = q->next;
-    }
-    pre->next = q->next;
-    free(q);
-    printf("Successfully delete node!\n");
+Status DeleteList_DuL(DuLNode *p, ElemType *e){
+    if(p==NULL)return ERROR;
+    *e=p->next->data;
+    ListErase(p->next);
     return SUCCESS;
 }
 
 void TraverseList_DuL(DuLinkedList L, void (*visit)(ElemType e)){
-    DuLinkedList p = L->next;
-    while(p)
+    ListPrint(L);
+}
+void ListPrint(DuLNode * phead)
+{
+    assert(phead);
+
+    DuLNode *cur = phead->next;
+    while(cur!=phead)
     {
-        visit(p->data);
-        p = p->next;
+        printf("%d ",cur->data);
+        cur=cur->next;
     }
     printf("\n");
+}
+//删除pos
+void ListErase(DuLNode*pos)
+{
+    assert(pos);
+
+   DuLNode *posprev =pos->prior;
+   DuLNode *posNext = pos->next;
+
+   posprev->next = posNext;
+   posNext->prior = posprev;
+   free(pos);
+   pos = NULL;
+}
+
+//pos之前插入
+void ListInsert(DuLNode*pos,ElemType x)
+{
+    assert(pos);
+    DuLNode * posPrev = pos->prior;
+    DuLNode *newnode = BuyListNode(x);
+
+    posPrev->next = newnode;
+    newnode->prior = posPrev;
+    newnode->next = pos;
+    pos->prior = newnode;
+
+}
+DuLNode *BuyListNode(ElemType x){
+    DuLNode *newnode = (DuLNode*) malloc(DEN);
+    newnode->data = x;
+    newnode->next = NULL;
+    newnode->prior = NULL;
+    return newnode;
+}
+void ListPushBack(DuLNode* phead,ElemType x)
+{
+    assert(phead);
+    DuLNode *tail = phead->prior;
+    DuLNode *newnode = (DuLNode*)malloc(DEN);
+    newnode->data = x;
+
+    //phead
+    tail->next=newnode;
+    newnode->prior = tail;
+    newnode->next = phead;
+    phead->prior = newnode;
+}
+DuLNode * ListFind(DuLNode * phead){
+    assert(phead->next!=NULL);
+    int x=0;
+    scanf("%d",&x);
+    DuLNode *cur= phead->next;
+    while(cur!=phead){
+        if(cur->data==x){
+            return cur;
+        }
+        cur = cur->next;
+    }
+    return NULL;
+}
+void test(DuLNode**L){
+    DuLNode *F;
+    InitList_DuL(&F);
+    ListPushBack(F,6);
+    ListPushBack(F,4);
+    ListPushBack(F,3);
+    ListPushBack(F,9);
+    ListPushBack(F,8);
+    *L=F;
 }

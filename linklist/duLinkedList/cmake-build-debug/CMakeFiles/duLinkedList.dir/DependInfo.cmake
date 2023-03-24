@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/yc/CLionProjects/duLinkedList/main.c" "CMakeFiles/duLinkedList.dir/main.c.obj" "gcc" "CMakeFiles/duLinkedList.dir/main.c.obj.d"
-  "C:/Users/yc/CLionProjects/duLinkedList/test.c" "CMakeFiles/duLinkedList.dir/test.c.obj" "gcc" "CMakeFiles/duLinkedList.dir/test.c.obj.d"
+  "C:/Users/yc/CLionProjects/qg/linklist/duLinkedList/main.c" "CMakeFiles/duLinkedList.dir/main.c.obj" "gcc" "CMakeFiles/duLinkedList.dir/main.c.obj.d"
+  "C:/Users/yc/CLionProjects/qg/linklist/duLinkedList/test.c" "CMakeFiles/duLinkedList.dir/test.c.obj" "gcc" "CMakeFiles/duLinkedList.dir/test.c.obj.d"
   )
 
 # Targets to which this target links.

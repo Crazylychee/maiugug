@@ -68,7 +68,7 @@ int main() {
                 break;
             case ReverseList1:
                 if (ReverseList(&L)) {
-                    printf("reverse successfully");
+                    printf("reverse successfully\n");
                 } else {
                     printf("fail to reverse ");
                 };

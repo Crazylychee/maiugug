@@ -23,8 +23,9 @@
 **************************************************************/
 #include "stdio.h"
 #include "stdlib.h"
+#include "assert.h"
 #define OVERFLOW -1
-
+#define DEN sizeof(DuLNode)
 /**************************************************************
 *	Struct Define Section
 **************************************************************/
@@ -48,7 +49,14 @@ typedef enum Status {
 /**************************************************************
 *	Prototype Declare Section
 **************************************************************/
+DuLNode * ListFind(DuLNode * phead);
+void ListPrint(DuLNode * phead);
+DuLNode *BuyListNode(ElemType x);
+void ListInsert(DuLNode*pos,ElemType x);
+void ListPushBack(DuLNode* phead,ElemType x);
+void test(DuLNode**L);
 void menu();
+void ListErase(DuLNode*pos);
 /**
  *  @name        : Status InitList_DuL(DuLinkedList *L)
  *	@description : initialize an empty linked list with only the head node
@@ -56,7 +64,7 @@ void menu();
  *	@return		 : Status
  *  @notice      : None
  */
-Status InitList_DuL(DuLinkedList L);
+Status InitList_DuL(DuLinkedList *L);
 
 /**
  *  @name        : void DestroyList_DuL(DuLinkedList *L)

@@ -1,6 +1,6 @@
 CMakeFiles/duLinkedList.dir/main.c.obj: \
- C:\Users\yc\CLionProjects\duLinkedList\main.c \
- C:\Users\yc\CLionProjects\duLinkedList\duLinkedList.h \
+ C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\main.c \
+ C:\Users\yc\CLionProjects\qg\linklist\duLinkedList\duLinkedList.h \
  D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
  D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
@@ -21,4 +21,5 @@ CMakeFiles/duLinkedList.dir/main.c.obj: \
  D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
  D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/malloc.h \
  D:/yc/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
- D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/errno.h
+ D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/errno.h \
+ D:/yc/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/assert.h

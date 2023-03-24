@@ -80,6 +80,7 @@ Status InitList(LinkedList *L)
 
 void DestroyList(LinkedList *L)
 {
+    assert(L!=NULL);
     LinkedList p = *L;
     while(p)
     {
@@ -125,7 +126,7 @@ void TraverseList(LinkedList L, void (*visit)(ElemType e))
 Status SearchList(LinkedList L, ElemType e)
 {
     LinkedList p;
-    if(L->next == NULL) return ERROR;
+//    if(L->next == NULL) return ERROR;
     p = Findnode(L);
     if(p==NULL){
         printf("can not find the number!!\n");
@@ -134,6 +135,7 @@ Status SearchList(LinkedList L, ElemType e)
     return SUCCESS;
 }
 Status ReverseList(LinkedList *L){
+    assert(*L!=NULL);
     //边界条件:如果是只有一个节点,或是空链表就不用操作
     LinkedList cur = (*L);
     LinkedList newhead = NULL;
@@ -151,7 +153,8 @@ Status ReverseList(LinkedList *L){
 }
 Status IsLoopList(LinkedList L)
 {
-    if(L ==NULL||L->next == NULL)
+    assert(L!=NULL);
+    if(L->next == NULL)
         return ERROR;
     LinkedList fast,slow;
     fast = slow = L;
@@ -170,6 +173,7 @@ Status IsLoopList(LinkedList L)
 }
 LNode* ReverseEvenList(LinkedList *L)
 {
+    assert(*L!=NULL);
     if((*L) == NULL||(*L)->next==NULL)
         return (*L);
     LinkedList q,p,o;
@@ -186,6 +190,7 @@ LNode* ReverseEvenList(LinkedList *L)
 }
 LNode* FindMidNode(LinkedList *L)
 {
+    assert(*L!=NULL);
     LinkedList slow,fast;
     slow = fast= *L;
     while(fast&&fast->next)
@@ -230,6 +235,7 @@ void SListPrint(LinkedList phead){
 }
 
 LinkedList Findnode(const LinkedList L){
+    assert(L!=NULL);
     int input=0;
     scanf("%d",&input);
     LinkedList newnode;
